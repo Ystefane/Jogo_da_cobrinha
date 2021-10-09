@@ -13,7 +13,7 @@ function criarBG() {
 }
 
 function criarCobra (){
-    for(i=0; i < cobra; i++){
+    for(i=0; i < cobra.length; i++){
         context.fillStyle = "green";
         context.fillRect(cobra[i].x, cobra[i].y, box, box);
     }

@@ -20,4 +20,4 @@ function criarCobra (){
 }
 
 criarBG();
-criarBG();
+criarCobra();

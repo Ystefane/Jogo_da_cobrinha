@@ -20,7 +20,21 @@ function criarCobra (){
     }
 }
 
+document.addEventListener("keydown", update);
+
+function update(event){
+    if(event.keyCode == 37 && movimento != "right") movimento = "left";
+    if(event.keyCode == 38 && movimento != "down") movimento = "up";
+    if(event.keyCode == 39 && movimento != "left") movimento = "right";
+    if(event.keyCode == 40 && movimento != "up") movimento = "down";
+}
+
+
 function comecarjogo() {
+    if(cobra[0].x > 15 * box & movimento == "right") cobra[0].x = 0;
+    if(cobra[0].x < 0 & movimento == "left") cobra[0].x = 16 * box;
+    if(cobra[0].y > 15 * box & movimento == "down") cobra[0].y = 0;
+    if(cobra[0].y <0 & movimento == "up") cobra[0].y = 16 * box;
 
     criarBG();
     criarCobra();

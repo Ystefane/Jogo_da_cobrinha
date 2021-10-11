@@ -26,7 +26,7 @@ function criarCobra (){
 }
 
 function apareceComida(){
-    context.fillStyle = "red";
+    context.fillStyle = "gray";
     context.fillRect(comida.x, comida.y, box, box);
 };
 
@@ -59,7 +59,15 @@ function comecarjogo() {
     if (movimento == "up") cobray -= box;
     if (movimento == "down") cobray += box;
 
-    cobra.pop();
+    if(cobrax != comida.x || cobray != comida.y){
+        cobra.pop();
+    }
+    else{
+        comida.x = Math.floor(Math.random() * 15 + 1) * box;
+        comida.y = Math.floor(Math.random() * 15 + 1) * box;
+    }
+
+    
 
     let novaCabeca = {
         x:cobrax,
